@@ -1,5 +1,7 @@
 # RockHubUI
 
+**Ссылка на GUI:** [RockHubUI.lua](https://raw.githubusercontent.com/rockscripter/RockHubGui/refs/heads/main/RockHubUI.lua)
+
 Самостоятельная Roblox/Luau UI-библиотека, выделенная из интерфейса Rock Hub. Сохранены исходные карточки, палитра, иконки, анимации, вкладки и элементы управления. Размер окна — 680 × 470; оно автоматически масштабируется под экран. Поддерживаются мышь и touch.
 
 ## Файлы
@@ -7,24 +9,18 @@
 - `RockHubUI.lua` — готовая библиотека; возвращает таблицу `UI`.
 - `RockHubUI.example.lua` — полный запускаемый пример.
 
-Для локального запуска положите оба файла в workspace исполнителя и запустите example. Библиотека загружается строкой:
+Запустите `RockHubUI.example.lua` в исполнителе — библиотека автоматически загрузится с GitHub:
 
 ```lua
-local UI = loadstring(readfile("RockHubUI.lua"))()
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/rockscripter/RockHubGui/refs/heads/main/RockHubUI.lua"))()
 ```
 
-Для загрузки с GitHub загрузите `RockHubUI.lua` в свой репозиторий и подставьте его raw URL:
-
-```lua
-local UI = loadstring(game:HttpGet("YOUR_RAW_URL/RockHubUI.lua"))()
-```
-
-В Roblox Studio библиотеку можно поместить в `ModuleScript` и вызвать `require` из `LocalScript`. Без доступа к CoreGui она использует `PlayerGui`. Файловая загрузка в example предназначена для исполнителя.
+В Roblox Studio библиотеку можно поместить в `ModuleScript` и вызвать `require` из `LocalScript`. Без доступа к CoreGui она использует `PlayerGui`. Загрузка через `game:HttpGet` и `loadstring` в example предназначена для исполнителя.
 
 ## Минимальный пример
 
 ```lua
-local UI = loadstring(readfile("RockHubUI.lua"))()
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/rockscripter/RockHubGui/refs/heads/main/RockHubUI.lua"))()
 local window = UI:CreateWindow({ Title = "My Hub", ToggleKey = Enum.KeyCode.RightShift })
 local tab = window:AddTab({ Name = "Main", Icon = "grid" })
 local section = tab:AddSection("Features")

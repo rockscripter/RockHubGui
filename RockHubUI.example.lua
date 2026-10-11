@@ -1,7 +1,5 @@
--- Place RockHubUI.lua in your executor's workspace beside this example.
--- For GitHub loading, replace the next line with:
--- local UI = loadstring(game:HttpGet("YOUR_RAW_URL/RockHubUI.lua"))()
-local UI = loadstring(readfile("RockHubUI.lua"), "RockHubUI")()
+-- GUI: https://raw.githubusercontent.com/rockscripter/RockHubGui/refs/heads/main/RockHubUI.lua
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/rockscripter/RockHubGui/refs/heads/main/RockHubUI.lua"), "RockHubUI")()
 
 -- Re-running the example replaces its previous window.
 local env = getgenv and getgenv() or _G
